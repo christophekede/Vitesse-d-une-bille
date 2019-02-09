@@ -7,7 +7,7 @@ function moyenne(a, b) {
 }
 
 //methode du point de milieu
-//le paramètres fn est une fonction, a et b sont les intervalles
+//le paramètre fn est une fonction, a et b sont les intervalles
 function pointMilieu(fn, a, b) {
 
   return ((b - a) * fn(moyenne(a, b)))
