@@ -7,7 +7,8 @@ function moyenne(a, b) {
 }
 
 //methode du point de milieu
-//le paramètre fn est une fonction, a et b sont les intervalles
+//le paramètre fn est une fonction, a et b sont les intervalles 
+
 function pointMilieu(fn, a, b) {
 
   return ((b - a) * fn(moyenne(a, b)))
@@ -97,9 +98,39 @@ function hybride(fn, h, b, n) {
   console.log()
   return (((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + composite(fn, h, b, n)
 
+}
 
 
+//question  4 b
 
 
+function evolutionDeErreurIHybride(n){
+
+return valeurExactesIntegralesI() - hybride(q2, h, b, n)
+
+}
+
+function yx(x){
+  return x
+}
+
+function y2x(x){
+  return 1
+}
+
+function TYplan(x){
+  return Math.sqrt(2)/Math.sqrt(2*10*x)
+}
+
+function hybridePlan(fn,h, b, n){
+
+
+  h=1/Math.sqrt(n)
+  var beta = 1/2
+  var u = (1 - beta) / (2 - beta)
+  console.log(fn(-0.6))
+
+  console.log()
+  return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
 }

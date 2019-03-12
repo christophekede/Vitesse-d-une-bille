@@ -1,6 +1,7 @@
 
 let a = 0
 let b = 1
+var h=0.01
 n = 100
 //Question 1.a
 let point = pointMilieu(carre, a, b)
@@ -24,8 +25,11 @@ console.log("valeurs exactes de l'intégrales I " + valeurExactesIntegralesI())
 
 //question 2.b
 console.log("Méthode composite appliquée sur I " + composite(q2, a, b, 100))
-console.log("Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 100))
+console.log("Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 10))
 console.log("Composite sur T(y) " + composite(Ty, a, b, 100))
+console.log("Valeur de plan hybride " + hybridePlan(TYplan, h, b, 32678))
+console.log("Valeur de plan  Point milieu " + (pointMilieu(TYplan, a, b)))
+console.log("Valeur de plan  composite " + composite(TYplan, a, b, 32768) )
 
 //question 2.c
 //ici se trouve les valeurs de défauts de n pour la courbe

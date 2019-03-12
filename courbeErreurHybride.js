@@ -5,10 +5,16 @@ let b = 1
 let h=0.01
 n = 100
 
-function Erreur(n) {
-  return valeurExactesIntegralesI() - composite(q2, a, b, n)
-}
 
+//question  4 b
+
+
+function evolutionDeErreurIHybride(n){
+
+    return valeurExactesIntegralesI() - hybride(q2, h, b, n)
+    
+    }
+    
 
 //question 2.c
 //ici se trouve les valeurs de défauts de n pour la courbe
@@ -17,7 +23,7 @@ var n = [1, 10, 100, 1000, 10000, 100000, 10000000]
 //on stock dans un tableau la marge d'érreur en fonction de n
 var Err = []
 n.forEach(function (e) {
-  Err.push(Erreur(e))
+  Err.push(evolutionDeErreurIHybride(e))
 })
 
 //Creation de la courbe
@@ -59,7 +65,7 @@ btn[0].addEventListener("click", function () {
 
   for (var i = 1; i <= 10000; i += 25) {
     n.push(i)
-    Err.push(Erreur(i))
+    Err.push(evolutionDeErreurIHybride(i))
     n.sort(compare)
     Err.sort(compare2)
   }
