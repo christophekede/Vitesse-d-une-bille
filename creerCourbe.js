@@ -14,6 +14,8 @@ x.forEach(function (e) {
 
 //Creation de la courbe
 var ctx = document.getElementById(canva).getContext('2d');
+ctx.canvas.width = 300;
+ctx.canvas.height = 300;
 var myChart = new Chart(ctx, {
   type: 'line',
   data: {

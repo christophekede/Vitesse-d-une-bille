@@ -6,12 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
+  
+  <style>
+        table {
+          border-collapse: collapse;
+          width: 60%;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even){background-color: #f2f2f2}
+        
+        th {
+          background-color: rgb(230, 74, 108);
+          color: white;
+        }
+        </style>
 </head>
 
 <body>  
-  <canvas id="myChart" width="200" height="200"></canvas>
+        <div style="width:500px; height:500px; float: left;">
+                <canvas id="myChart" width="200" height="200"></canvas>
+        </div >
+        <div style="width:500px; height:500px; float: left;margin-left: 45px">   
+                <h2>Colored Table Header</h2>
+        
+                <table id="plan">
+                  <tr><th>N</th><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+                  
+                 
+                </table>
+        </div>
 
-
+      
+        
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <script src="chart.min.js"></script>
@@ -20,7 +52,7 @@
   <script>
       creerCourbe(yx, "Plan", "myChart")
   </script>
-
+<script src="genererTableau.js"></script>
 </body>
 
 </html>
