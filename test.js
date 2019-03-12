@@ -27,9 +27,19 @@ console.log("valeurs exactes de l'intégrales I " + valeurExactesIntegralesI())
 console.log("Méthode composite appliquée sur I " + composite(q2, a, b, 100))
 console.log("Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 10))
 console.log("Composite sur T(y) " + composite(Ty, a, b, 100))
+
+//plan
 console.log("Valeur de plan hybride " + hybridePlan(TYplan, h, b, 32678))
 console.log("Valeur de plan  Point milieu " + (pointMilieu(TYplan, a, b)))
 console.log("Valeur de plan  composite " + composite(TYplan, a, b, 32768) )
+
+//Raide
+
+console.log("Valeur de raide hybride " + hybrideRaide(TYraide, h, b, 32678))
+console.log("Valeur de raide  Point milieu " + (pointMilieu(TYraide, a, b)))
+console.log("Valeur de raide  composite " + composite(TYraide, a, b, 32768) )
+
+
 
 //question 2.c
 //ici se trouve les valeurs de défauts de n pour la courbe

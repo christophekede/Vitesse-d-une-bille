@@ -68,7 +68,7 @@ function compare2(x, y) {
 }
 
 
-//question 3
+//question 3 à refaire 
 function y(x) {
   return x
 }
@@ -79,6 +79,7 @@ function y2(x) {
 
 
 
+//T(y) de I 
 function Ty(x) {
   var f = y(x)
   var f2 = y2(x)
@@ -87,15 +88,12 @@ function Ty(x) {
 }
 
 
-//question 4 a
-
+//question 4 a 
+//Application de la methode hybride sur I
 function hybride(fn, h, b, n) {
 
   var beta = 1 - ((-3 / 4) / 2)
   var u = (1 - beta) / (2 - beta)
-  console.log(fn(-0.6))
-
-  console.log()
   return (((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + composite(fn, h, b, n)
 
 }
@@ -110,27 +108,55 @@ return valeurExactesIntegralesI() - hybride(q2, h, b, n)
 
 }
 
+//y(x)=x
 function yx(x){
   return x
 }
 
+//y'(x)=1
 function y2x(x){
   return 1
 }
 
+//T(y) d'un tobbogan plan
 function TYplan(x){
   return Math.sqrt(2)/Math.sqrt(2*10*x)
 }
 
-function hybridePlan(fn,h, b, n){
 
+//Methode hybride sur un tobbogan plan
+function hybridePlan(fn,h, b, n){
 
   h=1/Math.sqrt(n)
   var beta = 1/2
   var u = (1 - beta) / (2 - beta)
-  console.log(fn(-0.6))
+  return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
-  console.log()
+}
+
+
+//y(x)=Math.sqrt(x)
+function racineX(x){
+  return Math.sqrt(x)
+}
+
+//derivée RacineX
+function racine2x(x){
+  return (x^((1/2)-1))/(1/2)
+}
+
+//T(y) d'un tobbogan raide
+function TYraide(x){
+  return Math.sqrt(1+Math.pow(racine2x(x), 2))/Math.sqrt(2*10*racineX(x))
+}
+
+
+//Methode hybride sur un tobbogan raide
+function hybrideRaide(fn,h, b, n){
+
+  h=1/Math.sqrt(n)
+  var beta = 1-(1/2)/2
+  var u = (1 - beta) / (2 - beta)
   return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
 }
