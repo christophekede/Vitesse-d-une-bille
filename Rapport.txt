@@ -3,3 +3,6 @@
 //à faire 
 
 -dessiner les courbes correspondantes au fonctions.
+-revoir T(y) pour l'intégrales 
+-organiser le codeeee 
+-concevoir une fonction permettant de résourdre T(y) via la methode Hybride

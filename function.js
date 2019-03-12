@@ -108,6 +108,7 @@ return valeurExactesIntegralesI() - hybride(q2, h, b, n)
 
 }
 
+/////////////////////////////////plan  / ///////////////////////////
 //y(x)=x
 function yx(x){
   return x
@@ -133,7 +134,10 @@ function hybridePlan(fn,h, b, n){
   return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
 }
+////////////////////////////////////////////////////////////
 
+
+////////////////////////   Raide ////////////////////////////////////////////////
 
 //y(x)=Math.sqrt(x)
 function racineX(x){
@@ -160,3 +164,35 @@ function hybrideRaide(fn,h, b, n){
   return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
 }
+
+/////////////////////////////////////////////////
+
+////////////////////////   Doux ////////////////////////////////////////////////
+
+//y(x)=((1/x)^(3/2))(5-3x)
+function doux(x){
+  return ((1/2)*Math.pow(x, (3/2)))*(5-3*x)
+}
+
+//derivée RaideX
+function doux2x(x){
+  return (x^((1/2)-1))/(1/2)
+}
+
+//T(y) d'un tobbogan Doux
+function TYdoux(x){
+  return Math.sqrt(1+Math.pow(doux2x(x), 2))/Math.sqrt(2*10*doux(x))
+}
+
+
+//Methode hybride sur un tobbogan Doux
+function hybrideDoux(fn,h, b, n){
+
+  h=1/Math.sqrt(n)
+  var beta = (3/2)/2
+  var u = (1 - beta) / (2 - beta)
+  return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
+
+}
+
+/////////////////////////////////////////////////
