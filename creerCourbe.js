@@ -4,7 +4,11 @@ function creerCourbe(fn, nom, canva) {
 
     //question 2.c
 //ici se trouve les valeurs de défauts de n pour la courbe
-var x = [0, .1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+// var x= []
+// for(var i=0; i<1; i+=0.01){
+// x.push(i)
+// }
+var x = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
 
 //on stock dans un tableau la marge d'érreur en fonction de n
 var y = []
@@ -28,7 +32,8 @@ var myChart = new Chart(ctx, {
         backgroundColor: [
             'rgba(255, 99, 132, 0.0)'],
         borderColor: ['rgba(255,99,132,1)'],
-        borderWidth: 1
+        borderWidth: 1,
+        pointRadius:0
       }]
   },
   options: {
@@ -38,11 +43,17 @@ var myChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           beginAtZero: true,
-          reverse:true
+          reverse:true,
+          stepSize:0.1
         }
       }],
       xAxes : [{
-        position:"top"
+        position:"top",
+        ticks : {
+            autoSkip:true,
+            maxTicksLimit:5,
+        
+        }
       }]
           
     
@@ -50,8 +61,6 @@ var myChart = new Chart(ctx, {
   }
 });
 /////////////////////////////////////////////////////////////////////////
-
-
 
 
 
