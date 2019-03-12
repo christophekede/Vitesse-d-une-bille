@@ -70,20 +70,19 @@ function compare2(x, y) {
 
 //question 3 à refaire 
 function y(x) {
-  return x
+  return Math.pow(x, (-3/4))
 }
 
 function y2(x) {
-  return 1
+  return (-3/4)*Math.pow(x, ((-3/4)-1))
 }
 
 
 
 //T(y) de I 
 function Ty(x) {
-  var f = y(x)
-  var f2 = y2(x)
-  return (Math.sqrt(1 + (f2 ^ 2))) / (Math.sqrt(2 * 10 * f))
+
+  return  Math.sqrt(1 + Math.pow(Math.abs(y2(x)), 2 )) / Math.sqrt(2 * 10 * y(x))
 
 }
 
@@ -146,20 +145,20 @@ function racineX(x){
 
 //derivée RacineX
 function racine2x(x){
-  return (x^((1/2)-1))/(1/2)
+  return (1/2)*Math.pow(x, (-1/2))
 }
 
 //T(y) d'un tobbogan raide
 function TYraide(x){
-  return Math.sqrt(1+Math.pow(racine2x(x), 2))/Math.sqrt(2*10*racineX(x))
+  return (Math.sqrt(1+Math.pow(racine2x(x), 2)) )/Math.sqrt(2*10*racineX(x))
 }
 
 
 //Methode hybride sur un tobbogan raide
 function hybrideRaide(fn,h, b, n){
 
-  h=1/Math.sqrt(n)
-  var beta = 1-(1/2)/2
+  var h=1/Math.sqrt(n)
+  var beta = 1-((1/2)/2)
   var u = (1 - beta) / (2 - beta)
   return ((((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + (composite(fn, h, b, n)))
 
@@ -176,7 +175,7 @@ function doux(x){
 
 //derivée RaideX
 function doux2x(x){
-  return (x^((1/2)-1))/(1/2)
+  return (3/4)*Math.sqrt(x)*(5-3*x) - (3/2) *Math.pow(x, (3/2))
 }
 
 //T(y) d'un tobbogan Doux
