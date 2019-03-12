@@ -91,7 +91,7 @@ function Ty(x) {
 //Application de la methode hybride sur I
 function hybride(fn, h, b, n) {
 
-  var beta = 1 - ((-3 / 4) / 2)
+  var beta = 3/4
   var u = (1 - beta) / (2 - beta)
   return (((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + composite(fn, h, b, n)
 
@@ -173,7 +173,7 @@ function doux(x){
   return ((1/2)*Math.pow(x, (3/2)))*(5-3*x)
 }
 
-//derivée RaideX
+//derivée doux
 function doux2x(x){
   return (3/4)*Math.sqrt(x)*(5-3*x) - (3/2) *Math.pow(x, (3/2))
 }
