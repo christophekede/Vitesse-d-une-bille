@@ -47,6 +47,9 @@ console.log("Valeur de doux Point milieu " + (pointMilieu(TYdoux, a, b)))
 console.log("Valeur de doux  composite " + composite(TYdoux, a, b, 32768) )
 
 
+document.querySelector('table')
+
+document.getElementById('')
 
 
 //question 2.c
