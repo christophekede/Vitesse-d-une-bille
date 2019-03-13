@@ -1,0 +1,1 @@
+//////////////// à remplir avec les fonctions primitives 
