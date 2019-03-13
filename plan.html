@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  
   <style>
         table {
           border-collapse: collapse;
@@ -25,10 +24,25 @@
           background-color: rgb(230, 74, 108);
           color: white;
         }
+        .equations p {
+          font-size: 45px;
+        }
+        .equations {
+          /* width: 45px;
+          height: 455px;
+          background-color: rebeccapurple;
+          display: flex;
+          flex-direction: row; */
+         
+        }
         </style>
 </head>
 
 <body>  
+        
+        <div class="equations">
+            <p >$$T(y)= {\int_{0}^{1} x^{2 \over  3} dx}$$</p><p> $$T(y)= {\int_{0}^{1} x^{2 \over  3} dx}$$</p>
+        </div>
         <div style="width:500px; height:500px; float: left;">
                 <canvas id="myChart" width="200" height="200"></canvas>
         </div >
@@ -45,7 +59,6 @@
       
         
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <script src="chart.min.js"></script>
   <script src="function.js"></script>
   <script src="creerCourbe.js"></script>
@@ -54,6 +67,12 @@
         creerCourbe(yx, "Plan", "myChart")
         genererTabPlan('plan',0, 1, 0.01)
     </script>
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+  <script src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 </body>
 
 </html>
