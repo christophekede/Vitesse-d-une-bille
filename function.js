@@ -91,7 +91,7 @@ function Ty(x) {
 //Application de la methode hybride sur I
 function hybride(fn, h, b, n) {
 
-  var beta = 3/4
+  var beta = 1.375
   var u = (1 - beta) / (2 - beta)
   return (((Math.pow(h, (1 - beta))) / (1 - beta)) * fn(h * u) * Math.pow(Math.abs((h * u)), beta)) + composite(fn, h, b, n)
 
