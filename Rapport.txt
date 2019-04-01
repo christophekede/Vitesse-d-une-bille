@@ -6,3 +6,10 @@
 -revoir T(y) pour l'intégrales fait
 -organiser le codeeee à faire -------------------------------------
 -concevoir une fonction permettant de résourdre T(y) via la methode Hybride en cours ------------
+
+----------------------- !!_________Commenter le code --------------------------------------
+
+---------------------!!____________Organisation du code cours -------------------------------------
+
+faire un constat entre la methode hybride et la methode composite, expliquer --------------------------
+-------------------------Creer des class--------------

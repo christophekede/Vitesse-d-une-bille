@@ -1,4 +1,7 @@
 
+
+
+
 let a = 0
 let b = 1
 var h=0.01
@@ -25,9 +28,19 @@ console.log("valeurs exactes de l'intégrales I " + valeurExactesIntegralesI())
 
 //question 2.b
 console.log("Méthode composite appliquée sur I " + composite(q2, a, b, 100))
-console.log("Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 10))
+var res = new Composite(q2, a, b)
+console.log("___________________class composite applique sur q2  "+ res.solve(100))
+var res2 = new PointDuMilieu(q2, a, b)
+console.log("___________________class Point Du Milieu applique sur q2  "+ res2.solve())
+
+console.log("****Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 100))
+
+var res3 = new Hybride(q2, b, (-3 / 4))
+console.log("___________________class Hybride applique sur q2  "+ res3.solve(1/Math.sqrt(35000), 35000))
 console.log("Composite sur T(y) " + composite(Ty, a, b, 100))
 console.log("y2  " + y2(1))
+
+
 
 //plan
 console.log("Valeur de plan hybride " + hybridePlan(TYplan, h, b, 32768))
@@ -45,6 +58,9 @@ console.log("Valeur de raide  composite " + composite(TYraide, a, b, 32768) )
 console.log("Valeur de doux hybride " + hybrideDoux(TYdoux, h, b, 32768))
 console.log("Valeur de doux Point milieu " + (pointMilieu(TYdoux, a, b)))
 console.log("Valeur de doux  composite " + composite(TYdoux, a, b, 32768) )
+
+//test De classe 
+
 
 
 document.querySelector('table')
