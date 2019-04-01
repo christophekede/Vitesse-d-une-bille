@@ -2,19 +2,19 @@
 //valeurs pour calculer l'érreur
 let a = 0
 let b = 1
-let h=0.01
+let h = 0.01
 n = 100
 
 
 //question  4 b
 
 
-function evolutionDeErreurIHybride(n){
+function evolutionDeErreurIHybride(n) {
 
-    return valeurExactesIntegralesI() - hybride(q2, h, b, n)
-    
-    }
-    
+  return valeurExactesIntegralesI() - hybride(q2, h, b, n)
+
+}
+
 
 //question 2.c
 //ici se trouve les valeurs de défauts de n pour la courbe
@@ -35,7 +35,7 @@ var myChart = new Chart(ctx, {
     datasets: [
       {
 
-        label: 'Evolution De l\'erreur en fonction de n',
+        label: 'Evolution De l\'erreur en fonction de N en methode Hybride',
         data: Err,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)'],
@@ -48,8 +48,18 @@ var myChart = new Chart(ctx, {
     maintainAspectRatio: false,
     scales: {
       yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Erreur'
+        },
         ticks: {
           beginAtZero: true
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'N'
         }
       }]
     }

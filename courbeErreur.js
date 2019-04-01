@@ -2,7 +2,7 @@
 //valeurs pour calculer l'érreur
 let a = 0
 let b = 1
-let h=0.01
+let h = 0.01
 n = 100
 
 function Erreur(n) {
@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
     datasets: [
       {
 
-        label: 'Evolution De l\'erreur en fonction de n',
+        label: 'Evolution De l\'erreur de la méthode composite en fonction de n',
         data: Err,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)'],
@@ -42,8 +42,20 @@ var myChart = new Chart(ctx, {
     maintainAspectRatio: false,
     scales: {
       yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Erreur'
+        },
+
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          labelString: "gee",
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'N'
         }
       }]
     }

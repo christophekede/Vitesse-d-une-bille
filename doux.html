@@ -12,20 +12,26 @@
     table {
       border-collapse: collapse;
       width: 60%;
+      height: 45%;
     }
 
     th,
     td {
       text-align: left;
-      padding: 8px;
+      padding: 5px;
     }
 
     tr:nth-child(even) {
-      background-color: #f2f2f2,
+      background-color: #f2f2f2
     }
 
     tr:last-child {
-      background-color: #62c78c
+      background-color: #5654b1;
+      color: white;
+    }
+
+    p {
+      font-size: 19px;
     }
 
     th {
@@ -36,22 +42,32 @@
 </head>
 
 <body>
-  <div style="width:80%; margin:0 auto;  margin-top: 40px;">
-    <div style="width:30%; height:500px; float: left;">
-      <canvas id="myChart" width="200" height="200"></canvas>
-    </div>
-    <div style="width:40%; height:500px; float: left;margin-left: 45px">
-      <h2>T(y)=</h2>
 
-      <table id="doux"> </table>
-    </div>
+  <div class="equations">
+    <p> Le tobbogan "doux" est représenté par $$ Y(x)= {1 \over
+      2}x^{3\over 2}(5-3x) $$
+    </p>
+  </div>
+  <div style="width:500px; height:400px; float: left;">
+    <canvas id="myChart" width="200" height="200"></canvas>
+  </div>
+  <div style="width:500px; height:400px; float: left;margin-left: 45px">
+    <h2> $$T(Y)=0.8021624489815022$$</h2>
 
+    <table id="doux">
+      <tr>
+        <th>N</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Savings</th>
+      </tr>
+
+
+    </table>
   </div>
 
 
 
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <script src="chart.min.js"></script>
   <script src="function.js"></script>
   <script src="creerCourbe.js"></script>
@@ -60,6 +76,20 @@
     creerCourbe(doux, "Doux", "myChart")
     genererTabDoux('doux', 0, 1, 0.01)
   </script>
+  <script src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  <style>
+    .mjx-chtml {
+      display: inline
+    }
+
+    .MJXc-display {
+      display: inline
+    }
+  </style>
+
+
+
+  <!-- __________________________Ajouter MathJax____________________________________ -->
 </body>
 
 </html>

@@ -12,12 +12,13 @@
     table {
       border-collapse: collapse;
       width: 60%;
+      height: 45%;
     }
 
     th,
     td {
       text-align: left;
-      padding: 8px;
+      padding: 5px;
     }
 
     tr:nth-child(even) {
@@ -25,7 +26,12 @@
     }
 
     tr:last-child {
-      background-color: #62c78c
+      background-color: #5654b1;
+      color: white;
+    }
+
+    p {
+      font-size: 19px;
     }
 
     th {
@@ -36,23 +42,21 @@
 </head>
 
 <body>
-  <div style="width:80%; margin:0 auto; margin-top: 40px; ">
-    <div style="width:30%; height:500px; float: left;">
-      <canvas id="myChart" width="200" height="200"></canvas>
-    </div>
-    <div style="width:40%; height:500px; float: left;margin-left: 45px">
-      <h2>Colored Table Header</h2>
+  <div class="equations">
+    <p> Le tobbogan "raide" est représenté par $$Y(x)=\sqrt(x)$$</p>
+  </div>
+  <div style="width:500px; height:500px; float: left;">
+    <canvas id="myChart" width="200" height="200"></canvas>
+  </div>
+  <div style="width:500px; height:500px; float: left;margin-left: 45px">
+    <h2>$$T(Y)=0.5785225228487554$$ </h2>
 
-      <table id="raide">
-      </table>
-    </div>
+    <table id="raide">
+    </table>
   </div>
 
 
 
-
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
   <script src="chart.min.js"></script>
   <script src="function.js"></script>
   <script src="creerCourbe.js"></script>
@@ -61,6 +65,23 @@
     creerCourbe(racineX, "doux", "myChart")
     genererTabRaide('raide', 0, 1, 0.01)
   </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+        });
+      </script>
+  <script src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+  <style>
+    .mjx-chtml {
+      display: inline
+    }
+
+    .MJXc-display {
+      display: inline
+    }
+  </style>
+
 </body>
 
 </html>

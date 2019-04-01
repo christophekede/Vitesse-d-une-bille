@@ -2,7 +2,7 @@
 
 //à faire 
 
--dessiner les courbes correspondantes au fonctions.
--revoir T(y) pour l'intégrales 
--organiser le codeeee 
--concevoir une fonction permettant de résourdre T(y) via la methode Hybride
+-dessiner les courbes correspondantes au fonctions.   fait
+-revoir T(y) pour l'intégrales fait
+-organiser le codeeee à faire -------------------------------------
+-concevoir une fonction permettant de résourdre T(y) via la methode Hybride en cours ------------
