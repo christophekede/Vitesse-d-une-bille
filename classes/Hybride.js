@@ -1,12 +1,15 @@
-class Hybride {
+class Hybride extends TY {
 
 
 
 
     constructor(fonction, borneSup, alpha) {
+        super(fonction, borneInf, borneSup, alpha)
         this.fonction = fonction
         this.borneSup = borneSup
         this.alpha = alpha
+
+
 
 
     }
@@ -30,6 +33,9 @@ class Hybride {
 
     }
 
+    solveTY(h, n) {
+        super.solve(h, n)
+    }
 
 
 }

@@ -9,13 +9,23 @@ class Fonction {
     }
 
     //Tranforme une expression mathématiques en fonction 
-    ToFonction() {
-        return eval("(function(x){ return " + this.exp + "  })")
+    ToFonctionExpression() {
+        return this.exp
     }
 
-    //Transforme une exprission mathématique en sa fonction dérivée
-    ToDerive() {
-        return eval("(function(x){ return " + math.derivative(this.exp, 'x') + "  })")
+    ToFonctionX(x) {
+        const f = math.eval("f(x) = " + this.exp)
+        return f(x)
+    }
+
+    //Transforme une expression mathématique en sa fonction dérivée
+    ToDeriveExpression() {
+        return math.derivative(this.exp, 'x').toString()
+    }   //function(x){return 2x+1 }
+
+    ToDeriveX(x) {
+        const f = math.eval("f(x) = " + this.ToDeriveExpression())
+        return f(x)
     }   //function(x){return 2x+1 }
 
 

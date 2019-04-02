@@ -10,69 +10,74 @@
 </head>
 
 <body>
-    <label for="exp">Votre express</label> <input type="text" name="exp" id="exp" placeholder="cos(x)+1">
-    <button id="btn">Calculer</button>
+  <label for="exp">Votre express</label> <input type="text" name="exp" id="exp" placeholder="cos(x)+1">
+  <button id="btn">Calculer</button>
   <h1>Vitesse de descente d'une bille le long d'un tobbogan</h1>
-  <p>Le but de ce projet est de calculer de façon approchée la vitesse de descente 
-    $$T(y)= \int_{0}^{1} $$  $$\sqrt(1+y'(x)^2) \over \sqrt(2*g*y(x)) $$ d'une bille
+  <p>Le but de ce projet est de calculer de façon approchée la vitesse de descente
+    $$T(y)= \int_{0}^{1} $$ $$\sqrt(1+y'(x)^2) \over \sqrt(2*g*y(x)) $$ d'une bille
     le long d'un Toboggan <br> à l'aide de différentes méthodes appelées des Quadratiture numérique.
   </p>
 
-  <h3>Pourquoi utilisé   </h3>
+  <h3>Pourquoi utilisé </h3>
 
-  <p>La première methode dit  Cette formule est obtenue en remplaçant f par une constante égale à la valeur de f au point milieu de [a,b], autrement dit  </p>
-    
+  <p>La première methode dit Cette formule est obtenue en remplaçant f par une constante égale à la valeur de f au point
+    milieu de [a,b], autrement dit </p>
+
 
   <a href="plan.html">Toboggan plan</a>
   <a href="raide.html">Toboggan raide</a>
   <a href="doux.html">Toboggan doux</a>
 
   <p>
-    nous constatons que le tobbogan raide est le tobbogan le plus rapide 
+    nous constatons que le tobbogan raide est le tobbogan le plus rapide
   </p>
-   
 
-  
-        <script type="text/x-mathjax-config">
+
+
+  <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
         </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.8.0/math.min.js"></script>
+  <script src="classes/Fonction.js"></script>
+  <script src="classes/TY.js"></script>
   <script src="classes/Composite.js"></script>
   <script src="classes/PointDuMilieu.js"></script>
-  <script src="classes/Hybride.js"></script>   
-  <script src="classes/Fonction.js"></script>     
+  <script src="classes/Hybride.js"></script>
+
+
   <script src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
   <script src="function.js"></script>
   <script src="test.js"></script>
 
   <script>
-  var btn=document.getElementById("btn")
+    var btn = document.getElementById("btn")
 
-  btn.addEventListener("click", function(){
+    btn.addEventListener("click", function () {
 
-    var exp=document.getElementById("exp").value
-    var test=new Fonction(exp)
-    console.log(test.fonction())
-
-
-  })
+      var exp = document.getElementById("exp").value
+      var test = new Fonction(exp)
+      console.log(test.fonction())
 
 
-  
+    })
+
+
+
   </script>
-  
-  
+
+
 
   <style>
-      .mjx-chtml {
-        display: inline
-      }
-      
-      .MJXc-display {
-        display:inline
-      }
-    </style>
+    .mjx-chtml {
+      display: inline
+    }
+
+    .MJXc-display {
+      display: inline
+    }
+  </style>
 
 </body>
 
