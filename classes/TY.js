@@ -1,7 +1,7 @@
 class TY {
 
 
-  constructor(fonction, borneInf, borneSup, alpha) { ///x^2 +x
+  constructor(fonction, borneInf = null, borneSup, alpha) { ///x^2 +x
 
     this.fonction = fonction
     this.borneInf = borneInf

@@ -4,7 +4,7 @@ class Composite extends TY {
 
 
   constructor(fonction, borneInf, borneSup) {
-    super(fonction, borneInf, borneSup, 23)
+    super(fonction, borneInf, borneSup, null)
     this.fonction = fonction
     this.borneInf = borneInf
     this.borneSup = borneSup

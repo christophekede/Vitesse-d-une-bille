@@ -18,7 +18,7 @@ class PointDuMilieu {
 
 
   solve() {
-    return ((this.borneSup - this.borneInf) * this.fonction(moyenne(this.borneInf, this.borneSup)))
+    return ((this.borneSup - this.borneInf) * this.fonction.ToFonctionX(moyenne(this.borneInf, this.borneSup)))
   }
 
 

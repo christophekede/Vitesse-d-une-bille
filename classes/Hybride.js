@@ -3,7 +3,7 @@ class Hybride extends TY {
 
 
 
-    constructor(fonction, borneSup, alpha) {
+    constructor(fonction, borneInf, borneSup, alpha) {
         super(fonction, borneInf, borneSup, alpha)
         this.fonction = fonction
         this.borneSup = borneSup
@@ -28,7 +28,7 @@ class Hybride extends TY {
         }
 
         var u = (1 - beta) / (2 - beta)
-        return (((Math.pow(h, (1 - beta))) / (1 - beta)) * this.fonction(h * u) * Math.pow(Math.abs((h * u)), beta))
+        return (((Math.pow(h, (1 - beta))) / (1 - beta)) * this.fonction.ToFonctionX(h * u) * Math.pow(Math.abs((h * u)), beta))
             + (new Composite(this.fonction, h, this.borneSup)).solve(n)
 
     }

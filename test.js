@@ -26,13 +26,15 @@ console.log("Méthode composite appliquée sur I " + composite(q2, a, b, 100))
 
 var co2 = new Fonction("pow(x, (-3/4))")
 var res = new Composite(co2, a, b)
+var Tres = new Trapeze(co, a, b)
+console.log("___________________class Trapeze appliqué sur x^(-3/4)  " + Tres.solve())
 console.log("___________________class composite applique sur -3/4 " + res.solve(100))
-var res2 = new PointDuMilieu(q2, a, b)
+var res2 = new PointDuMilieu(co2, a, b)
 console.log("___________________class Point Du Milieu applique sur q2  " + res2.solve())
 
 console.log("****Méthode Hybride appliquée sur I " + hybride(q2, 0.01, b, 100))
 
-var res3 = new Hybride(q2, b, (-3 / 4))
+var res3 = new Hybride(co2, a, b, -0.75)
 console.log("___________________class Hybride applique sur q2  " + res3.solve(0.001, 35000))
 
 console.log("Composite sur T(y) " + composite(Ty, a, b, 100))
@@ -42,7 +44,9 @@ console.log("y2  " + y2(1))
 
 //plan
 console.log("Valeur de plan hybride " + hybridePlan(TYplan, h, b, 32768))
-var plan = new Hybride(TYplan, b, 1)
+
+var p = new Fonction("x")
+var plan = new Hybride(p, b, 1)
 console.log("___________________class Hybride applique sur TYplan " + plan.solve(0.1, 32768))
 console.log("Valeur de plan  Point milieu " + (pointMilieu(TYplan, a, b)))
 console.log("Valeur de plan  composite " + composite(TYplan, a, b, 32768))
@@ -59,7 +63,7 @@ console.log("Valeur de doux hybride " + hybrideDoux(TYdoux, h, b, 32768))
 console.log("Valeur de doux Point milieu " + (pointMilieu(TYdoux, a, b)))
 console.log("Valeur de doux  composite " + composite(TYdoux, a, b, 32768))
 
-console.log("***************** " + (new Fonction("cos(x)").ToDerive()))
+console.log("***************** " + (new Fonction("cos(x)").ToDeriveExpression()))
 
 //test De classe 
 
