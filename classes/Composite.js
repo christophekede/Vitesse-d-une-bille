@@ -10,6 +10,7 @@ class Composite extends TY {
     this.borneSup = borneSup
 
 
+
   }
 
   moyenne(inf, sup) {
@@ -34,8 +35,8 @@ class Composite extends TY {
   }
 
   solveTY(n) {
-
-    return (new Composite(super.ToTY, this.borneSup, this.alpha)).solve(n)
+    console.log(super.ToTY(52))
+    return (new Composite(super.ToTY, this.borneInf, this.borneSup)).solve(n)
   }
 
 

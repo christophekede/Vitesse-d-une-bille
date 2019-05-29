@@ -19,7 +19,7 @@ class TY {
   //Transforme une expression mathématique en sa fonction dérivée
 
   ToTY(x) {
-    Math.sqrt(1 + Math.pow(this.fonction.ToFonction(x), 2)) / Math.sqrt(2 * 10 * this.fonction.ToDerive(x))
+    Math.sqrt(1 + Math.pow(this.fonction.ToFonctionX(x), 2)) / Math.sqrt(2 * 10 * this.fonction.ToDeriveX(x))
   }
 
 

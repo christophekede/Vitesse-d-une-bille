@@ -8,17 +8,80 @@
   <title>Document</title>
 
 </head>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    height: 45%;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 5px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  tr:last-child {
+    background-color: #5654b1;
+    color: white;
+  }
+
+  p {
+    font-size: 19px;
+  }
+
+  th {
+    background-color: rgb(230, 74, 108);
+    color: white;
+  }
+
+  .search {
+    padding-top: 45px;
+    margin: 0 auto;
+    margin-right: 350px;
+    text-align: center;
+  }
+
+  .search input {
+    width: 450px;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  .search button {
+    height: 39px;
+  }
+
+  .search label {
+    font-size: 25px;
+  }
+
+  .center {
+    padding-top: 45px;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+
+
+  }
+</style>
+
 
 <body>
-  <label for="exp">Votre express</label> <input type="text" name="exp" id="exp" placeholder="cos(x)+1">
-  <button id="btn">Calculer</button>
+
+
   <h1>Vitesse de descente d'une bille le long d'un tobbogan</h1>
-  <p>Le but de ce projet est de calculer de façon approchée la vitesse de descente
+  <p>Le but de ce projet est de calculer de façon approchée le temps de descente
     $$T(y)= \int_{0}^{1} $$ $$\sqrt(1+y'(x)^2) \over \sqrt(2*g*y(x)) $$ d'une bille
     le long d'un Toboggan <br> à l'aide de différentes méthodes appelées des Quadratiture numérique.
   </p>
 
-  <h3>Pourquoi utilisé </h3>
+  <!-- <h3>Pourquoi utilisé </h3>
 
   <p>La première methode dit Cette formule est obtenue en remplaçant f par une constante égale à la valeur de f au point
     milieu de [a,b], autrement dit </p>
@@ -30,7 +93,24 @@
 
   <p>
     nous constatons que le tobbogan raide est le tobbogan le plus rapide
-  </p>
+  </p> -->
+  <div class="search">
+    <label for="exp">La fonction répresentant votre Toboggan : </label> <input type="text" name="exp" id="exp"
+      placeholder="sqrt(x)">
+    <button id="btn">Calculer</button>
+  </div>
+
+  <div class='center'>
+    <div style="width:500px; height:500px;">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+
+    <div style="width:500px; height:500px; margin-left:25px; margin-top: 25px;">
+      <h2 id="ty"></h2>
+    </div>
+  </div>
+
+
 
 
 
@@ -52,6 +132,11 @@
   <script src="function.js"></script>
   <script src="test.js"></script>
 
+  <script src="chart.min.js"></script>
+  <script src="function.js"></script>
+  <script src="creerCourbe.js"></script>
+  <script src="genererTableau.js"></script>
+
   <script>
     var btn = document.getElementById("btn")
 
@@ -59,7 +144,9 @@
 
       var exp = document.getElementById("exp").value
       var test = new Fonction(exp)
-      console.log(test.fonction())
+      creerCourbe(test, test.ToFonctionExpression(), "myChart");
+      document.getElementById('ty').innerText = "T(Y)=" + new Composite(test, 0, 1).solve(10000);
+
 
 
     })
