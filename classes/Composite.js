@@ -1,10 +1,10 @@
-class Composite extends TY {
+class Composite {
 
 
 
 
   constructor(fonction, borneInf, borneSup) {
-    super(fonction, borneInf, borneSup, null)
+
     this.fonction = fonction
     this.borneInf = borneInf
     this.borneSup = borneSup
@@ -22,22 +22,21 @@ class Composite extends TY {
 
 
   solve(n) {
+    console.log(this.fonction)
 
     let interval = (this.borneSup - this.borneInf) / n
     var somme = 0.0
 
     for (let i = 0; i < n; i++) {
-      somme = somme + (((this.borneInf + interval) - this.borneInf) * this.fonction.ToFonctionX(this.moyenne(this.borneInf, this.borneInf + interval)))
+      somme = somme + (((this.borneInf + interval) - this.borneInf) * this.fonction(this.moyenne(this.borneInf, this.borneInf + interval)))
       this.borneInf = this.borneInf + interval
     }
 
     return somme;
   }
 
-  solveTY(n) {
-    console.log(super.ToTY(52))
-    return (new Composite(super.ToTY, this.borneInf, this.borneSup)).solve(n)
-  }
+
+
 
 
 

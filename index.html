@@ -78,7 +78,8 @@
   <h1>Vitesse de descente d'une bille le long d'un tobbogan</h1>
   <p>Le but de ce projet est de calculer de façon approchée le temps de descente
     $$T(y)= \int_{0}^{1} $$ $$\sqrt(1+y'(x)^2) \over \sqrt(2*g*y(x)) $$ d'une bille
-    le long d'un Toboggan <br> à l'aide de différentes méthodes appelées des Quadratiture numérique.
+    le long d'un Toboggan <br> à l'aide de Méthode composite.
+    "La méthode de calcul est plus poussé que lors de notre soutenance nous avons appliqué la méhode composite sur T(y)"
   </p>
 
   <!-- <h3>Pourquoi utilisé </h3>
@@ -95,7 +96,7 @@
     nous constatons que le tobbogan raide est le tobbogan le plus rapide
   </p> -->
   <div class="search">
-    <label for="exp">La fonction répresentant votre Toboggan : </label> <input type="text" name="exp" id="exp"
+    <label for="exp">La fonction répresentant votre Toboggan F(x) = </label> <input type="text" name="exp" id="exp"
       placeholder="sqrt(x)">
     <button id="btn">Calculer</button>
   </div>
@@ -144,8 +145,10 @@
 
       var exp = document.getElementById("exp").value
       var test = new Fonction(exp)
+
       creerCourbe(test, test.ToFonctionExpression(), "myChart");
-      document.getElementById('ty').innerText = "T(Y)=" + new Composite(test, 0, 1).solve(10000);
+      document.getElementById('ty').innerText = "T(Y)=" + new TY(test, 0.01, 1).solveComp(1000) + " sec";
+
 
 
 
